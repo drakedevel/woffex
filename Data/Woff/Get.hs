@@ -69,7 +69,7 @@ gBytes offset size origSize = do
   pos <- bytesRead
   skip $ fromIntegral offset - fromIntegral pos
   
-  maybeCompBits <- getLazyByteString $ fromIntegral $ size
+  maybeCompBits <- getLazyByteString $ fromIntegral size
   let bits = if size == origSize
              then maybeCompBits
              else decompress maybeCompBits
